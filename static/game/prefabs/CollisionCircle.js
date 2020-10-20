@@ -19,17 +19,20 @@ export default {
       ]
     },
     {
-      type:"CircleCollider",
+      type:"AABBCollider",
       values:[
         {
-          key:"radius",
+          key:"width",
+          value:"50"
+        },
+        {
+          key:"height",
           value:"50"
         }
       ]
     },
     {
-      type:"CollisionCircleBehavior",
-    },
-
+      type:"EnemyMovementBehavior",
+    }
   ]
 }

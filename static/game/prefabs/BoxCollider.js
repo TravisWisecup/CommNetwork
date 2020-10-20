@@ -1,8 +1,8 @@
 export default {
-    name: "BladeCollider",
+    name: "BoxCollider",
     components: [
       {
-        type: "AxeBladeColliderComponent",
+        type: "pcComponent",
         values: [
           {
             key: "width",
@@ -22,7 +22,7 @@ export default {
           },
           {
             key: "alpha",
-            value: "0.5"
+            value: "1"
           },
         ]
       },
@@ -38,9 +38,15 @@ export default {
               value: "53",
           }
         ]
-      },     
+      },    
       {
-        type:"BladeCollisionBehavior",
+        type:"MovementBehavior",
+      }, 
+      // {
+      //   type:"BoxCollisionBehavior",
+      // },
+      {
+        type:"ScoreBehavior",
       },
     ]
   }

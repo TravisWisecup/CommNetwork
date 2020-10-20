@@ -113,21 +113,9 @@ export default {
           ]
       },
       {
-        name:"axe",
-        location: {x:220, y:220},
-        type:"Axe",
-        children:[
-            {
-                name:"axeBlade",
-                location: {x:0, y:-15},
-                type:"AxeBlade",
-            },
-            {
-                name:"bladeCollider",
-                location: {x:105, y:20},
-                type:"BladeCollider"
-            }
-          ]
+          name:"boxCollider",
+          location: {x:105, y:20},
+          type:"BoxCollider"
       },
       // {
       //   name:"cDot",
@@ -135,14 +123,9 @@ export default {
       //   type:"CollisionDot",
       // },
       {
-        name:"corcle",
-        location: {x:200, y:75},
-        type:"CollisionCircle",
-      },
-      {
-        name:"AABBtest",
-        location: {x:105, y:20},
-        type:"BladeCollider"
+        name:"enemy",
+        location: {x:400, y:75},
+        type:"Enemy",
       }
     ]
   }

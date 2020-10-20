@@ -28,7 +28,8 @@ import Rectangle from "./prefabs/Rectangle.js"
 import StartButton from "./prefabs/StartButton.js"
 import Text from "./prefabs/Text.js"
 import NetworkDummy from "./prefabs/NetworkDummy.js"
-import BladeCollider from "./prefabs/BladeCollider.js"
+import BoxCollider from "./prefabs/BoxCollider.js"
+import Enemy from "./prefabs/Enemy.js"
 
 export default {
   OscillatingCircle,
@@ -61,6 +62,7 @@ export default {
   Text,
   FewTrees,
   NetworkDummy,
-  BladeCollider
+  BoxCollider,
+  Enemy
 
 }

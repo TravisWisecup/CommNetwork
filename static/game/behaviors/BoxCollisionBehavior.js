@@ -5,7 +5,7 @@ import Triangle from "../prefabs/Triangle.js"
 import CollisionCircle from "../prefabs/CollisionCircle.js"
 
 
-export default class BladeCollisionBehavior extends Base.Behavior {
+export default class BoxCollisionBehavior extends Base.Behavior {
     
     start() {
 

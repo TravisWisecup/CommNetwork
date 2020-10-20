@@ -19,8 +19,10 @@ import MouseText from "./behaviors/MouseText.js"
 import MatrixReturn from "./behaviors/MatrixReturn.js"
 import StartSceneInputListener from "./behaviors/StartSceneInputListener.js"
 import NetworkBehavior from "./behaviors/NetworkBehavior.js"
-import BladeCollisionBehavior from "./behaviors/BladeCollisionBehavior.js"
+import BoxCollisionBehavior from "./behaviors/BoxCollisionBehavior.js"
 import WASDMovementBehavior from "./behaviors/WASDMovementBehavior.js"
+import ScoreBehavior from "./behaviors/ScoreBehavior.js"
+import EnemyMovementBehavior from "./behaviors/EnemyMovementBehavior.js"
 
 export default{
   CircleBehavior,
@@ -44,7 +46,9 @@ export default{
   StartSceneInputListener,
   FewTreeBuilder,
   NetworkBehavior,
-  BladeCollisionBehavior,
-  WASDMovementBehavior
+  BoxCollisionBehavior,
+  WASDMovementBehavior,
+  ScoreBehavior,
+  EnemyMovementBehavior
   
 }

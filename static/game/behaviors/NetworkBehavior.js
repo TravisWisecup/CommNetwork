@@ -1,5 +1,5 @@
 import SceneManager from "../SceneManager.js";
-import Axe from "../prefabs/Axe.js"
+import BoxCollider from "../prefabs/BoxCollider.js"
 import NetworkDummy from "../prefabs/NetworkDummy.js"
 
 
@@ -27,7 +27,7 @@ class NetworkBehavior {
       console.log("Join accept " + JSON.stringify(msg));
       self.myObject = msg;
       self.objects.push(self.myObject);
-      let axe = SceneManager.currentScene.children.find(i=>i.hasComponent("AxeHandleBehavior"));
+      let axe = SceneManager.currentScene.children.find(i=>i.hasComponent("ScoreBehavior"));
       axe.id = self.myObject.id;
       axe.x = msg.x;
       axe.y = msg.y;

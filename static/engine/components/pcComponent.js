@@ -1,6 +1,6 @@
 import Base from "../Base.js"
 
-export default class AxeBladeColliderComponent extends Base.Component{
+export default class pcComponent extends Base.Component{
     width;
     height;
     fill;

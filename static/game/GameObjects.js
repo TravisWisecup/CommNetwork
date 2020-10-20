@@ -30,6 +30,7 @@ import Text from "./prefabs/Text.js"
 import NetworkDummy from "./prefabs/NetworkDummy.js"
 import BoxCollider from "./prefabs/BoxCollider.js"
 import Enemy from "./prefabs/Enemy.js"
+import Enemies from "./prefabs/Enemies.js"
 
 export default {
   OscillatingCircle,
@@ -63,6 +64,7 @@ export default {
   FewTrees,
   NetworkDummy,
   BoxCollider,
-  Enemy
+  Enemy,
+  Enemies
 
 }

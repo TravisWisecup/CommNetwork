@@ -7,49 +7,32 @@ import Triangle from "../prefabs/Triangle.js";
 
 
 export default class EnemyGenerator extends Base.Behavior {
-  enemies = 15;
   time = 0;
-
+  second_increment = 0;
   start() {
     
   }
 
   update()
   {
-    this.time += .004;
+    this.time += .008;
 
-    for(let i = 0; i < this.startEnemies; i++)
+    if(Math.floor(this.time) % 4 == this.second_increment)
     {
-      let treeScale = randomInteger(0.65, 1.1);	
-      let _x = 525;
-      let _y = 325;
-      if(i % 2 == 0)	
-      {	
-        _x += (i*55);	
-      }	
-      else{	
-        _x -= (i*55);
-      }	
-      let treetrunk = SceneManager.instantiate(TreeTrunk, new Base.Point(_x,_y), 0)
-      // let triangle = SceneManager.instantiate(Triangle, new Base.Point(_x,_y), 0)
-      // treetrunk.scaleX = treeScale;	
-      // treetrunk.scaleY = treeScale;	
-      let branchX = 32;
-      let branchY = -280;
-      for(let j = 0; j < this.branches; j++)	
-      {	
-        branchY = -280;
-        if(j % 2 == 0){
-          branchY += ((j/2) * 30);
-        }
-        else{	
-          branchX *= -1;
-          branchY += (((j-1)/2) * 30);
-        }
+        ++this.second_increment;
+        // var check = Math.floor(this.time) % 4;
+        // console.log("Enemy created at time: " + check);
+        var enemyY = randomInteger(-250, 200);
+        var enemyX = 700;
         SceneManager.currentScene.instantiate(Enemy, new Base.Point(enemyX, enemyY));
-      }	
+
+        if(this.second_increment == 4)
+        {
+            this.second_increment = 0;
+        }
     }
   }
+
 }
 
 function randomInteger(min, max) 

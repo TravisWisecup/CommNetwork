@@ -23,6 +23,7 @@ import BoxCollisionBehavior from "./behaviors/BoxCollisionBehavior.js"
 import WASDMovementBehavior from "./behaviors/WASDMovementBehavior.js"
 import ScoreBehavior from "./behaviors/ScoreBehavior.js"
 import EnemyMovementBehavior from "./behaviors/EnemyMovementBehavior.js"
+import EnemyGenerator from "./behaviors/EnemyGenerator.js"
 
 export default{
   CircleBehavior,
@@ -49,6 +50,7 @@ export default{
   BoxCollisionBehavior,
   WASDMovementBehavior,
   ScoreBehavior,
-  EnemyMovementBehavior
+  EnemyMovementBehavior,
+  EnemyGenerator,
   
 }

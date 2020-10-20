@@ -126,6 +126,11 @@ export default {
         name:"enemy",
         location: {x:400, y:75},
         type:"Enemy",
+      },
+      {
+        name:"enemies",
+        location: {x:0,y:0},
+        type:'Enemies',
       }
     ]
   }

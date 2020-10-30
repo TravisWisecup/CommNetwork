@@ -42,9 +42,6 @@ export default {
       {
         type:"MovementBehavior",
       }, 
-      // {
-      //   type:"BoxCollisionBehavior",
-      // },
       {
         type:"ScoreBehavior",
       },

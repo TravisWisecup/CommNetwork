@@ -22,7 +22,7 @@ export default class EnemyGenerator extends Base.Behavior {
         ++this.second_increment;
         // var check = Math.floor(this.time) % 4;
         // console.log("Enemy created at time: " + check);
-        var enemyY = randomInteger(-250, 200);
+        var enemyY = randomInteger(-150, 300);
         var enemyX = 700;
         SceneManager.currentScene.instantiate(Enemy, new Base.Point(enemyX, enemyY));
 

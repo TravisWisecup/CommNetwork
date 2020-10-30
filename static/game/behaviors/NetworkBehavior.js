@@ -55,6 +55,8 @@ class NetworkBehavior {
       }
     })
 
+
+
     // Only keep objects that are still in the game
     socket.on('valid', arr => {
       self.objects = self.objects.filter(i => arr.includes(i.id));
@@ -71,7 +73,6 @@ class NetworkBehavior {
     let object = SceneManager.currentScene.children.find(i=>i.id == this.myObject.id);
     if(!object) return console.log("Couldn't find my object");
     socket.emit("move", {x:object.x,y:object.y});
-
   }
   
 

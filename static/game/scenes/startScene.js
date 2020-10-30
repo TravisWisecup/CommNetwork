@@ -117,11 +117,6 @@ export default {
           location: {x:105, y:20},
           type:"BoxCollider"
       },
-      // {
-      //   name:"cDot",
-      //   location: {x:200, y:200},
-      //   type:"CollisionDot",
-      // },
       {
         name:"enemy",
         location: {x:400, y:75},

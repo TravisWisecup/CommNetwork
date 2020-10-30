@@ -8,9 +8,3 @@ export default {
   components:[]
 }
 
-/*export default class EmptyGameObject extends Engine.Base.GameObject{
-  constructor(x,y) {
-    super(x,y)
-    
-  }
-}*/

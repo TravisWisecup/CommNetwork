@@ -3,7 +3,6 @@ import Axe from "./prefabs/Axe.js"
 import AxeBlade from "./prefabs/AxeBlade.js"
 import BackGroundDay from "./prefabs/BackGroundDay.js"
 import Branch from "./prefabs/Branch.js"
-import CardBack from "./prefabs/CardBack.js"
 import DaySky from "./prefabs/DaySky.js"
 import Guy from "./prefabs/Guy.js"
 import InputBar from "./prefabs/InputBar.js"
@@ -38,7 +37,6 @@ export default {
   AxeBlade,
   BackGroundDay,
   Branch,
-  CardBack,
   DaySky,
   Guy,
   InputBar,

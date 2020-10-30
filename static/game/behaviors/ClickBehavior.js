@@ -2,7 +2,6 @@ import Base from "../../engine/Base.js"
 import SceneManager from "../SceneManager.js";
 import Components from "../../engine/Components.js"
 import Input from "../../engine/base/Input.js";
-import CardBack from "../prefabs/CardBack.js";
 
 export default class ClickBehavior extends Base.Behavior{
     compName = "";
@@ -16,10 +15,7 @@ export default class ClickBehavior extends Base.Behavior{
 
     onMouseOver(){
         // console.log("Mouse Over");
-        if(this.compName == "Cards")
-        {
-            SceneManager.instantiate(CardBack, [0, 0]);
-        }
+
     }
 
     onMouseDown(){

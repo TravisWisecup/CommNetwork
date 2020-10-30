@@ -56,9 +56,10 @@ io.on('connection', function (socket) {
   });
 
   //Listen for the user to lose score
-  socket.on('ScoreLoss', function () {
+  socket.on('ScoreUpdate', function(msg) {
 
-    //console.log("Score Loss test");
+    console.log("New Score of: " + msg);
+    console.log("By " + socket.id);
     socket.broadcast.emit('objectInfo', socket.id);
     socket.emit('objectInfo', socket.id);
   });

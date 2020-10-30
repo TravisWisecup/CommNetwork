@@ -5,7 +5,7 @@ export default class ScoreBehavior extends Base.Behavior{
     time = 0;
     time_increase = .004
     score = 0;
-    score_loss = 75;
+    score_increase = 75;
     tempScore = 0;
     userInfo = [];
 
@@ -16,10 +16,9 @@ export default class ScoreBehavior extends Base.Behavior{
     }
 
     update(){
-        if(this.tempScore >= this.score)
+        if(this.tempScore < this.score)
         {
-            console.log("Setting isColliding true: Works!");
-            socket.emit("ScoreLoss", "");
+            socket.emit("ScoreUpdate", this.score);
             this.tempScore = this.score;
         }
 
@@ -27,7 +26,6 @@ export default class ScoreBehavior extends Base.Behavior{
             console.log("ScoreLoss from " + JSON.stringify(msg) + " score is now: " + this.score);
         } )
         this.time+=this.time_increase;
-        this.score += Math.ceil((this.time_increase) * 900);
 
     }
     onCollisionEnter(collisionObject){
@@ -36,13 +34,13 @@ export default class ScoreBehavior extends Base.Behavior{
 
     onCollisionStay(collisionObject){
 
-        if (collisionObject.gameObject.hasComponent("EnemyMovementBehavior") && (this.tempScore + 250) < this.score && this.score > 200) {
+        if (collisionObject.gameObject.hasComponent("EnemyMovementBehavior") && (this.tempScore + 75) > this.score) {
             // SceneManager.destroy(collisionObject.gameObject);
             // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
             console.log("this.score before: " + this.score);
 
             this.tempScore = this.score;
-            this.score -= this.score_loss;
+            this.score += this.score_increase;
 
             console.log("this.score after: " + this.score);
         }

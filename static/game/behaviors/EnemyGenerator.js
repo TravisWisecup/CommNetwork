@@ -8,6 +8,8 @@ import Triangle from "../prefabs/Triangle.js";
 
 export default class EnemyGenerator extends Base.Behavior {
   time = 0;
+  time_increment = 0.5;
+  time_before_new_enemy = 140;
   second_increment = 0;
   start() {
     
@@ -15,22 +17,24 @@ export default class EnemyGenerator extends Base.Behavior {
 
   update()
   {
-    this.time += .008;
 
-    if(Math.floor(this.time) % 4 == this.second_increment)
+    if(this.time % this.time_before_new_enemy == this.second_increment)
     {
-        ++this.second_increment;
+        this.second_increment += this.time_increment * 45;
         // var check = Math.floor(this.time) % 4;
         // console.log("Enemy created at time: " + check);
-        var enemyY = randomInteger(-150, 300);
+        var enemyY = randomInteger(-150, 350);
         var enemyX = 700;
         SceneManager.currentScene.instantiate(Enemy, new Base.Point(enemyX, enemyY));
 
-        if(this.second_increment == 4)
+        if(this.second_increment >= this.time_before_new_enemy)
         {
             this.second_increment = 0;
         }
     }
+    this.time += this.time_increment;
+
+
   }
 
 }

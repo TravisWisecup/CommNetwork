@@ -9,10 +9,10 @@ export default class MovementBehavior extends Base.Behavior {
     }
     update() {
         
-        if (Input.keys['ArrowUp'] && this.gameObject.y > -120) {
+        if (Input.keys['ArrowUp'] && this.gameObject.y > -160) {
             this.gameObject.y -= this.speed
         }
-        if( Input.keys['ArrowDown'] && this.gameObject.y < 160) {
+        if( Input.keys['ArrowDown'] && this.gameObject.y < 280) {
             this.gameObject.y += this.speed
         }
         if (Input.keys['ArrowLeft'] && this.gameObject.x > -1200) {

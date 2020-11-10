@@ -2,7 +2,6 @@ import CircleBehavior from "./behaviors/CircleBehavior.js";
 import TextBehavior from "./behaviors/TextBehavior.js";
 import AxeHandleBehavior from "./behaviors/AxeHandleBehavior.js";
 import BranchBehavior from "./behaviors/BranchBehavior.js";
-import InputBarBehavior from "./behaviors/InputBarBehavior.js";
 import OrbitBehavior from "./behaviors/OrbitBehavior.js";
 import CollisionCircleBehavior from "./behaviors/CollisionCircleBehavior.js";
 import DotBehavior from "./behaviors/DotBehavior.js";
@@ -26,13 +25,13 @@ import EnemyMovementBehavior from "./behaviors/EnemyMovementBehavior.js"
 import EnemyGenerator from "./behaviors/EnemyGenerator.js"
 import SpeedBoostMovement from "./behaviors/SpeedBoostMovement.js"
 import ScoreHolder from "./behaviors/ScoreHolder.js"
+import ColorChangeBehavior from "./behaviors/ColorChangeBehavior.js"
 
 export default{
   CircleBehavior,
   TextBehavior,
   BranchBehavior,
   AxeHandleBehavior,
-  InputBarBehavior,
   OrbitBehavior,
   CollisionCircleBehavior,
   DotBehavior,
@@ -55,5 +54,6 @@ export default{
   EnemyMovementBehavior,
   EnemyGenerator,
   SpeedBoostMovement,
-  ScoreHolder
+  ScoreHolder,
+  ColorChangeBehavior,
 }

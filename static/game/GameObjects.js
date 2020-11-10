@@ -5,12 +5,10 @@ import BackGroundDay from "./prefabs/BackGroundDay.js"
 import Branch from "./prefabs/Branch.js"
 import DaySky from "./prefabs/DaySky.js"
 import Guy from "./prefabs/Guy.js"
-import InputBar from "./prefabs/InputBar.js"
 import Log from "./prefabs/Log.js"
 import Moon from "./prefabs/Moon.js"
 import Sun from "./prefabs/Sun.js"
 import TextTimer from "./prefabs/TextTimer.js"
-import TrackerBar from "./prefabs/TrackerBar.js"
 import TreeTrunk from "./prefabs/TreeTrunk.js"
 import TestCollisionCircle from "./prefabs/TestCollisionCircle.js"
 import Camera from "./prefabs/Camera.js"
@@ -30,6 +28,7 @@ import NetworkDummy from "./prefabs/NetworkDummy.js"
 import BoxCollider from "./prefabs/BoxCollider.js"
 import Enemy from "./prefabs/Enemy.js"
 import Enemies from "./prefabs/Enemies.js"
+import SpeedBoost from "./prefabs/SpeedBoost.js"
 
 export default {
   OscillatingCircle,
@@ -39,12 +38,10 @@ export default {
   Branch,
   DaySky,
   Guy,
-  InputBar,
   Log,
   Moon,
   Sun,
   TextTimer,
-  TrackerBar,
   TreeTrunk,
   CollisionDot,
   CollisionCircle,
@@ -64,5 +61,5 @@ export default {
   BoxCollider,
   Enemy,
   Enemies,
-
+  SpeedBoost,
 }

@@ -1,16 +1,16 @@
 export default {
-    name: "Enemy",
+    name: "SpeedBoost",
     components:[
       {
         type:"CircleComponent",
         values:[
           {
             key:"radius",
-            value:"12"
+            value:"9"
           },
           {
             key:"fill",
-            value:"blue"
+            value:"yellow"
           },
           {
             key:"stroke",
@@ -19,13 +19,13 @@ export default {
         ]
       },
       {
-        type:"EnemyMovementBehavior",
+        type:"SpeedBoostMovement",
+      },
+      {
+          type:"EnemyMovementBehavior",
       },
       {
         type:"Point",
-      },
-      {
-        type:"ColorChangeBehavior",
       },
     ]
   }

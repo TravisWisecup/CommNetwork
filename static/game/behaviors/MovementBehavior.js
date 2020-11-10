@@ -8,11 +8,12 @@ export default class MovementBehavior extends Base.Behavior {
     speed_increase = 5;
     time = 0;
     speed_time = 0;
+    enemy_color = "";
     start() {
     }
     update() {
         this.time += 0.1;
-        if(this.time - 10 > this.speed_time)
+        if(this.time - 14 > this.speed_time)
         {
             this.speed = 12;
         }
@@ -32,8 +33,8 @@ export default class MovementBehavior extends Base.Behavior {
     }
 
     onCollisionStay(collisionObject){
-
-        if (collisionObject.gameObject.hasComponent("SpeedBoostMovement")) {
+        this.color = this.gameObject.components[0].fill
+        if (collisionObject.gameObject.components[0].fill == "yellow") {
             SceneManager.destroy(collisionObject.gameObject);
             // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
             this.speed_time = this.time;

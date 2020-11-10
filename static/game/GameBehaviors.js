@@ -24,6 +24,8 @@ import WASDMovementBehavior from "./behaviors/WASDMovementBehavior.js"
 import ScoreBehavior from "./behaviors/ScoreBehavior.js"
 import EnemyMovementBehavior from "./behaviors/EnemyMovementBehavior.js"
 import EnemyGenerator from "./behaviors/EnemyGenerator.js"
+import SpeedBoostMovement from "./behaviors/SpeedBoostMovement.js"
+import ScoreHolder from "./behaviors/ScoreHolder.js"
 
 export default{
   CircleBehavior,
@@ -52,5 +54,6 @@ export default{
   ScoreBehavior,
   EnemyMovementBehavior,
   EnemyGenerator,
-  
+  SpeedBoostMovement,
+  ScoreHolder
 }

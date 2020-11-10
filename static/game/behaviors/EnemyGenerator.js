@@ -1,10 +1,6 @@
 import Base from "../../engine/Base.js"
 import Enemy from "../prefabs/Enemy.js"
 import SceneManager from "../SceneManager.js";
-import GameObjects from "../GameObjects.js"
-import Point from "../../engine/base/Point.js";
-import Triangle from "../prefabs/Triangle.js";
-
 
 export default class EnemyGenerator extends Base.Behavior {
   time = 0;
@@ -20,6 +16,7 @@ export default class EnemyGenerator extends Base.Behavior {
 
     if(this.time % this.time_before_new_enemy == this.second_increment)
     {
+      //The more you multiply by the slower it generates enemies
         this.second_increment += this.time_increment * 45;
         // var check = Math.floor(this.time) % 4;
         // console.log("Enemy created at time: " + check);

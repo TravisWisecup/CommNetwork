@@ -1,6 +1,8 @@
 import SceneManager from "../SceneManager.js";
 import BoxCollider from "../prefabs/BoxCollider.js"
 import NetworkDummy from "../prefabs/NetworkDummy.js"
+import Base from "../../engine/Base.js";
+import Text from "../prefabs/Text.js"
 
 
 class NetworkBehavior {
@@ -20,6 +22,9 @@ class NetworkBehavior {
     
     // Ask for our object information
     socket.emit("join", "");
+
+    let textX = -250;
+    let textY = -400;
 
     // Listen for our object information
     let self = this;

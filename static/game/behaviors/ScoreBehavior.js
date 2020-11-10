@@ -7,12 +7,11 @@ export default class ScoreBehavior extends Base.Behavior{
     score = 0;
     score_increase = 200;
     tempScore = 0;
-    userInfo = [];
 
     start(){
         socket = io();
 
-        //socket.emit("ScoreStart", "");
+        socket.emit("ScoreStart", "113131");
     }
 
     update(){
@@ -23,7 +22,7 @@ export default class ScoreBehavior extends Base.Behavior{
         }
 
         socket.on('objectInfo', msg => {
-            console.log("Score Increase from " + JSON.stringify(msg) + " score is now: " + this.score);
+            //console.log("Score Increase from " + JSON.stringify(msg) + " score is now: " + this.score);
         } )
         this.time+=this.time_increase;
 
@@ -37,12 +36,12 @@ export default class ScoreBehavior extends Base.Behavior{
         if (collisionObject.gameObject.hasComponent("EnemyMovementBehavior") && (this.tempScore + 75) > this.score) {
             SceneManager.destroy(collisionObject.gameObject);
             // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
-            console.log("this.score before: " + this.score);
+            // console.log("this.score before: " + this.score);
 
             this.tempScore = this.score;
             this.score += this.score_increase;
 
-            console.log("this.score after: " + this.score);
+            // console.log("this.score after: " + this.score);
         }
 
     }

@@ -74,60 +74,8 @@ function wheel(event){
     return false;
   }
 
-  var socket = io();
-  socket.on('message', function(data) {
-    console.log(data);
-  });
-  
-  socket.on('test', function() {
-    SceneManager.currentScene.instantiate(Guy, [100, 200]);
-  });
 
-  // var movement = {
-  //     up: false,
-  //     down: false,
-  //     left: false,
-  //     right: false
-  //   }
-  //   document.addEventListener('keydown', function(event) {
-  //     switch (event.keyCode) {
-  //       case 65: // A
-  //         movement.left = true;
-  //         break;
-  //       case 87: // W
-  //         movement.up = true;
-  //         break;
-  //       case 68: // D
-  //         movement.right = true;
-  //         break;
-  //       case 83: // S
-  //         movement.down = true;
-  //         break;
-  //     }
-  //   });
-  //   document.addEventListener('keyup', function(event) {
-  //     switch (event.keyCode) {
-  //       case 65: // A
-  //         movement.left = false;
-  //         break;
-  //       case 87: // W
-  //         movement.up = false;
-  //         break;
-  //       case 68: // D
-  //         movement.right = false;
-  //         break;
-  //       case 83: // S
-  //         movement.down = false;
-  //         break;
-  //     }
-  //   });
-  
-  // socket.emit('new player');
-  // setInterval(function() {
-  //   socket.emit('movement', movement);
-  // }, 1000 / 60);
-
-//Keep our canvas full screen
+ //Keep our canvas full screen
 //from https://blog.codepen.io/2013/07/29/full-screen-canvas/
 
 var can = document.getElementById("canv");
@@ -169,26 +117,5 @@ function update(ctx) {
 function draw(ctx) {
   SceneManager.currentScene.draw(ctx, canv.width, canv.height);
 }
-
-// socket.on('state', function(players) {
-//   var count = 0;
-//   for (var id in players) {
-//     count++;
-//     var player = players[id];
-//     if(SceneManager.currentScene.name == "StartScene")
-//     {
-//       player.Obj = SceneManager.instantiate(Guy, [player.x + count * 5, player.y]);
-//       for(var i = 0; i < 5; i++)
-//       {
-//         player.Obj.x += 5;
-//       }
-//     }
-
-//   }
-// });
-
-// socket.on('test', function(myObject){
-//   console.log("Test success! myObject x = " + myObject.x + " and myObject y = " + myObject.y);
-// });
 
 main();

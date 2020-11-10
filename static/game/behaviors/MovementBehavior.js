@@ -1,14 +1,21 @@
 import Base from "../../engine/Base.js"
+import SceneManager from "../SceneManager.js"
 import Components from "../../engine/Components.js"
 import Input from "../../engine/base/Input.js";
 
 export default class MovementBehavior extends Base.Behavior {
     speed = 12;
-    
+    speed_increase = 5;
+    time = 0;
+    speed_time = 0;
     start() {
     }
     update() {
-        
+        this.time += 0.1;
+        if(this.time - 10 > this.speed_time)
+        {
+            this.speed = 12;
+        }
         if (Input.keys['ArrowUp'] && this.gameObject.y > -160) {
             this.gameObject.y -= this.speed
         }
@@ -20,6 +27,18 @@ export default class MovementBehavior extends Base.Behavior {
         }
         if( Input.keys['ArrowRight'] && this.gameObject.x < 1200) {
             this.gameObject.x += this.speed
+        }
+
+    }
+
+    onCollisionStay(collisionObject){
+
+        if (collisionObject.gameObject.hasComponent("SpeedBoostMovement")) {
+            SceneManager.destroy(collisionObject.gameObject);
+            // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
+            this.speed_time = this.time;
+            
+            this.speed += this.speed_increase;
         }
 
     }

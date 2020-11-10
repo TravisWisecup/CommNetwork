@@ -12,6 +12,9 @@ app.use(express.static(path.join(__dirname, 'static')));
 
 // A list of objects in our game
 let objects = [];
+let ScoreInfo = {};
+let highScore = -1;
+let topPlayer = "";
 
 // Listen for clients to connect
 io.on('connection', function (socket) {
@@ -22,10 +25,10 @@ io.on('connection', function (socket) {
       console.log('a player joined');
   
       console.log(msg);
-  
+      
       //Create a new game object
       let newObject = { id: socket.id, x: Math.random() * 500, y: Math.random() * 500 };
-  
+      
       //Add the game object to our list of game objects
       objects.push(newObject)
       console.log(objects);
@@ -57,11 +60,25 @@ io.on('connection', function (socket) {
 
   //Listen for the user to lose score
   socket.on('ScoreUpdate', function(msg) {
+    let score = msg;
+    ScoreInfo[socket.id] = score;
 
-    console.log("New Score of: " + msg);
-    console.log("By " + socket.id);
-    socket.broadcast.emit('objectInfo', socket.id);
-    socket.emit('objectInfo', socket.id);
+    for(var key in ScoreInfo)
+    {
+      let tempScore = ScoreInfo[key];
+      console.log(key + " has score of: " + ScoreInfo[key] + "\n")
+      if(tempScore > highScore)
+      {
+        highScore = tempScore;
+        topPlayer = key;
+      }
+    }
+    console.log(key + " has the top score of + " + highScore + "!!!\n");
+ 
+    // console.log("New Score of: " + msg);
+    // console.log("By " + socket.id);
+    // socket.broadcast.emit('objectInfo', ScoreInfo);
+    // socket.emit('objectInfo', ScoreInfo);
   });
   
 
@@ -76,6 +93,7 @@ io.on('connection', function (socket) {
     //Update all remaining users on the list of valid users
     io.sockets.emit("valid", objects.map(i => i.id));
   })
+
 });
 
 

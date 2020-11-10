@@ -16,8 +16,10 @@ export default {
             key:"fill",
             value:"black"
           },
-         
         ]
+      },
+      {
+        type:"ScoreHolder"
       }
     ]
   

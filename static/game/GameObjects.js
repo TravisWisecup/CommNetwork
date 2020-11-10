@@ -63,6 +63,6 @@ export default {
   NetworkDummy,
   BoxCollider,
   Enemy,
-  Enemies
+  Enemies,
 
 }

@@ -10,12 +10,10 @@ export default class ScoreBehavior extends Base.Behavior{
 
     start(){
         socket = io();
-
-        socket.emit("ScoreStart", "113131");
     }
 
     update(){
-        if(this.tempScore < this.score)
+        if(this.tempScore != this.score)
         {
             socket.emit("ScoreUpdate", this.score);
             this.tempScore = this.score;
@@ -33,7 +31,7 @@ export default class ScoreBehavior extends Base.Behavior{
 
     onCollisionStay(collisionObject){
 
-        if (collisionObject.gameObject.hasComponent("EnemyMovementBehavior") && (this.tempScore + 75) > this.score) {
+        if (collisionObject.gameObject.components[0].fill == "blue" && (this.tempScore + 75) > this.score) {
             SceneManager.destroy(collisionObject.gameObject);
             // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
             // console.log("this.score before: " + this.score);
@@ -43,6 +41,25 @@ export default class ScoreBehavior extends Base.Behavior{
 
             // console.log("this.score after: " + this.score);
         }
+        if (collisionObject.gameObject.components[0].fill == "red" && (this.tempScore + 75) > this.score) {
+            SceneManager.destroy(collisionObject.gameObject);
+            // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
+            // console.log("this.score before: " + this.score);
 
+            this.tempScore = this.score;
+            this.score -= this.score_increase;
+
+            // console.log("this.score after: " + this.score);
+        }
+        if (collisionObject.gameObject.components[0].fill == "turquoise" && (this.tempScore + 75) > this.score) {
+            SceneManager.destroy(collisionObject.gameObject);
+            // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
+            // console.log("this.score before: " + this.score);
+
+            this.tempScore = this.score;
+            this.score += this.score_increase * 5;
+
+            // console.log("this.score after: " + this.score);
+        }
     }
 }

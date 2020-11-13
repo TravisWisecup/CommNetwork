@@ -28,7 +28,6 @@ import NetworkDummy from "./prefabs/NetworkDummy.js"
 import BoxCollider from "./prefabs/BoxCollider.js"
 import Enemy from "./prefabs/Enemy.js"
 import Enemies from "./prefabs/Enemies.js"
-import SpeedBoost from "./prefabs/SpeedBoost.js"
 
 export default {
   OscillatingCircle,
@@ -61,5 +60,4 @@ export default {
   BoxCollider,
   Enemy,
   Enemies,
-  SpeedBoost,
 }

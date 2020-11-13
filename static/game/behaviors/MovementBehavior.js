@@ -1,11 +1,11 @@
 import Base from "../../engine/Base.js"
 import SceneManager from "../SceneManager.js"
-import Components from "../../engine/Components.js"
 import Input from "../../engine/base/Input.js";
 
 export default class MovementBehavior extends Base.Behavior {
     speed = 12;
     speed_increase = 5;
+    speed_decrease = 8;
     time = 0;
     speed_time = 0;
     enemy_color = "";
@@ -41,6 +41,14 @@ export default class MovementBehavior extends Base.Behavior {
             
             this.speed += this.speed_increase;
         }
+        if (collisionObject.gameObject.components[0].fill == "red") {
+            SceneManager.destroy(collisionObject.gameObject);
+            // SceneManager.instantiate(CollisionCircle, new Point(Math.random() * 400, Math.random() * 400), 0);
+            // console.log("this.score before: " + this.score);
+            this.speed_time = this.time;
 
+            this.speed -= this.speed_decrease;
+            // console.log("this.score after: " + this.score);
+        }
     }
 }

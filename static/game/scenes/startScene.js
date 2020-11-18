@@ -113,17 +113,6 @@ export default {
           ]
       },
       {
-        name:"ScoreTest",
-        location: {x:-140, y:-400},
-        type:"Text",
-        values:[
-          {
-            key:"text",
-            value:"Text"
-          }
-        ],
-      },
-      {
           name:"boxCollider",
           location: {x:105, y:20},
           type:"BoxCollider"

@@ -2,23 +2,27 @@ export default {
   name: "NetworkDummy",
   components:[
     {
-      type:"RectangleComponent",
-      values:[
+      type: "pcComponent",
+      values: [
         {
           key: "width",
-          value: "175"
+          value: "100"
         },
         {
           key: "height",
-          value: "10"
-        },
-        {
-          key: "fill",
-          value: "red"
+          value: "53"
         },
         {
           key: "stroke",
           value: "black"
+        },
+        {
+          key: "fill",
+          value: "gray"
+        },
+        {
+          key: "alpha",
+          value: ".75"
         },
       ]
     },

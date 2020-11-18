@@ -1,6 +1,6 @@
-import SceneOne from "./Scenes/SceneOne.js"
-import SceneTwo from "./Scenes/SceneTwo.js"
-import StartScene from "./Scenes/startScene.js"
+import SceneOne from "./scenes/SceneOne.js"
+import SceneTwo from "./scenes/SceneTwo.js"
+import StartScene from "./scenes/startScene.js"
 import LetsPlayScene from "./scenes/LetsPlayScene.js"
 
 export default{

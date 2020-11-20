@@ -4,8 +4,22 @@ export default {
       {
         type:"CameraComponent",
       },
+
       {
-        type:"CameraMover",
-      },
+        type: "AABBCollider",
+        values: [
+          {
+            key: "width",
+            value: "100",
+          },
+          {
+              key: "height",
+              value: "53",
+          }
+        ]
+      },    
+      {
+        type:"MovementBehavior",
+      }, 
     ]
   }

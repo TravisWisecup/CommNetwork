@@ -19,7 +19,6 @@ let topPlayer = "";
 // Listen for clients to connect
 io.on('connection', function (socket) {
 
-
     //Listen for a user to request a new game object
     socket.on('join', function (msg) {
       console.log('a player joined');
@@ -73,7 +72,7 @@ io.on('connection', function (socket) {
         topPlayer = key;
       }
     }
-    console.log(key + " has the top score of + " + highScore + "!!!\n");
+    console.log(key + " has the top score of: " + highScore + "!!!\n");
  
     // console.log("New Score of: " + msg);
     // console.log("By " + socket.id);

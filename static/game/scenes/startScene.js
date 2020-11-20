@@ -14,7 +14,7 @@ export default {
       },
       {
         name: "Main Camera",
-        location: { x: 150, y: 150 },
+        location: { x: 105, y: 20 },
         type: "Camera",
         componentValues: [
         {
@@ -27,11 +27,7 @@ export default {
           ],
         }
       ],
-      components: [
-        {
-          type: "MovementBehavior"
-        }
-      ]
+
     },
       {
         name: "GUI Canvas",

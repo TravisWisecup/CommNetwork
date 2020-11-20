@@ -5,7 +5,7 @@ import Input from "../../engine/base/Input.js";
 export default class MovementBehavior extends Base.Behavior {
     speed = 12;
     speed_increase = 5;
-    speed_decrease = 8;
+    speed_decrease = 5;
     time = 0;
     speed_time = 0;
     enemy_color = "";

@@ -41,11 +41,12 @@ class NetworkBehavior {
     // Listen for updates about other objects
     socket.on('update', obj => {
       if(!self.myObject)return;
-      if(obj.id == self.myObject.id)return;
+      if(obj.id == self.myObject.id) {console.log("I am here! obj.id == self.obj.id")
+       return; }
       //console.log("Update " + JSON.stringify(obj))
 
       //Add the object if we don't know about it
-      if (!self.objects.some(i => i.id == obj.id)) {
+      if (!self.objects.some(i => i.id == obj.id) ) {
         self.objects.push(obj);
         let dummy = SceneManager.currentScene.instantiate(NetworkDummy, {x:obj.x, y:obj.y},0);
         dummy.id = obj.id;
